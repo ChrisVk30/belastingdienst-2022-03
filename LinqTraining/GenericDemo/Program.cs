@@ -94,4 +94,4 @@ foreach (var item in mijnList)
 	Console.WriteLine($"mijn item: {item}");
 }
 
-var mijnStringList = new MyList<string>();
+//var mijnStringList = new MyList<string>();
