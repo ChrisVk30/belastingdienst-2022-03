@@ -33,6 +33,8 @@ namespace DelegatesAndEvents
 		//	}
 		//}
 
+		// 
+
 		public void FilterProducts(Predicate<Product> filter, Action<Product> writer)
 		{
 			foreach (var product in Products)
