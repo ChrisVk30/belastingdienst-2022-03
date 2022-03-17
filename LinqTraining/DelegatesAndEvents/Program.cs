@@ -46,15 +46,34 @@ using DelegatesAndEvents;
 
 
 
-var frank = new Accountant();
+//var frank = new Accountant();
 
-var account = new BankAccount { Holder = "Wesley" };
+//var account = new BankAccount { Holder = "Wesley" };
 
-// subscribe
-account.TooHighWithdrawn += frank.HandleHighWithdrawals;
+//// subscribe
+//account.TooHighWithdrawn += frank.HandleHighWithdrawals;
 
-account.Withdraw(500M);
-account.Withdraw(50000M);
-account.Withdraw(300M);
-account.Withdraw(500M);
+//account.Withdraw(500M);
+//account.Withdraw(50000M);
+//account.Withdraw(300M);
+//account.Withdraw(500M);
 
+
+
+var watcher = new FileSystemWatcher("C:\\belastindienst");
+watcher.Created += (sender, args) =>
+{
+	global::System.Console.WriteLine("Bestand aangemaakt");
+};
+watcher.Deleted += (sender, args) =>
+{
+	global::System.Console.WriteLine("Bestand verwijderd");
+};
+
+watcher.EnableRaisingEvents = true;
+
+
+while(true)
+{
+	Thread.Sleep(100);
+}
