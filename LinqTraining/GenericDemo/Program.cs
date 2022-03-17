@@ -73,7 +73,25 @@ foreach(var key in dict.Keys)
  * g => 23
  */
 
+//var mijnCustomList = new MijnClass<int>();
+//foreach (var item in mijnCustomList)
+//{
+
+//}
 
 
 
+var mijnList = new MyList<int>();
+mijnList.Add(4);
+mijnList.Add(8);
+mijnList.Add(15);
+mijnList.Add(16);
+mijnList.Add(23);
 
+
+foreach (var item in mijnList)
+{
+	Console.WriteLine($"mijn item: {item}");
+}
+
+var mijnStringList = new MyList<string>();
