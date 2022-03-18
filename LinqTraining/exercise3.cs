@@ -39,7 +39,7 @@ namespace Lab_02
             {
                 Console.WriteLine($"Product {group.Key}");
 
-                foreach (var productOffering in productOfferings.Where(x => x.ProductName == group.Key))
+                foreach (var productOffering in group)
                 {
                     Console.WriteLine("Offering: {0} by {1}", productOffering.Price, productOffering.Vendor);
                 }
