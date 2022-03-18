@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionDemo", "Collectio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionLab", "CollectionLab\CollectionLab.csproj", "{ED8701E3-FA91-465E-AEC0-E0A29F1614B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqDemo", "LinqDemo\LinqDemo.csproj", "{EC2CF3BE-7AA9-4C5C-9BE8-A3B0F8381E1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{ED8701E3-FA91-465E-AEC0-E0A29F1614B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED8701E3-FA91-465E-AEC0-E0A29F1614B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED8701E3-FA91-465E-AEC0-E0A29F1614B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2CF3BE-7AA9-4C5C-9BE8-A3B0F8381E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2CF3BE-7AA9-4C5C-9BE8-A3B0F8381E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2CF3BE-7AA9-4C5C-9BE8-A3B0F8381E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2CF3BE-7AA9-4C5C-9BE8-A3B0F8381E1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
