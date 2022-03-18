@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeenWpfEvent", "WpfEvent\Ge
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionDemo", "CollectionDemo\CollectionDemo.csproj", "{7AE70531-A738-43CF-AAB0-1EB375C5C194}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionLab", "CollectionLab\CollectionLab.csproj", "{ED8701E3-FA91-465E-AEC0-E0A29F1614B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7AE70531-A738-43CF-AAB0-1EB375C5C194}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AE70531-A738-43CF-AAB0-1EB375C5C194}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AE70531-A738-43CF-AAB0-1EB375C5C194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED8701E3-FA91-465E-AEC0-E0A29F1614B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8701E3-FA91-465E-AEC0-E0A29F1614B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8701E3-FA91-465E-AEC0-E0A29F1614B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8701E3-FA91-465E-AEC0-E0A29F1614B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
