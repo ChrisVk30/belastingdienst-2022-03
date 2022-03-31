@@ -9,6 +9,14 @@ Maak een Galgje-console-applicatie.
 * Het spel moet gereset te kunnen worden.
 * Het resultaat van het spel hoort duidelijk aangegeven te worden.
 
+Tijd over?
+
+* Hou de volgende statistieken bij over de laatste 10 gespeelde potjes:
+  * Hoeveel foute letters worden er gegokt
+  * Hoelang men erover doet om een woord te raden
+  * Uiteraard met unittests
+* Bied een menu-optie aan waarop te zien is welke speler het meeste aantal woorden goed heeft geraden en wie de beste ratio heeft (geraden vs niet geraden)
+
 ## Blok 2: Developing Databases and XML
 
 Gebruik een database om high scores en statistieken van het spel op te slaan.
