@@ -1,0 +1,22 @@
+﻿@page
+@model DemoProject.Pages.IndexModel
+
+Hallo vanaf mijn eerste Razor Page
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Merk</th>
+        <th>Prijs</th>
+        <th>Grootte</th>
+    </tr>
+    @foreach (var tv in Model.tvs)
+    {
+        <tr>
+            <td>@tv.Id</td>
+            <td>@tv.Brand</td>
+            <td>&euro; @tv.Price</td>
+            <td>@tv.Size&quot;</td>
+        </tr>
+    }
+</table>
