@@ -182,6 +182,20 @@ wanneer je in JP's ogen niet hoeft te unittesten:
 
 Verbeter de kwaliteit van je tests met [mutation testing](https://stryker-mutator.io/).
 
+## EF Core
+
+=> library/framework
+=> Object-Relational Mapper
+   - SQL
+   - EF 6
+   - [Dapper](https://github.com/DapperLib/Dapper) (beter qua performance)
+
+NoSQL - MongoDB Cassandra Cosmos
+
+* `DbContext` voor database
+* `DbSet` voor tabel
+* Migrations om database up-/downgrades uit te voeren
+
 
 
 
