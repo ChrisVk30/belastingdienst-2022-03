@@ -15,6 +15,7 @@ namespace DemoProject.Entities
 
 		[Required(ErrorMessage = "Vul dit in aub")]
 		[RegularExpression("^[a-zA-Z0-9]+$", ErrorMessage = "Alleen letters en cijfers graag")]
+		[MaxLength(40)]
 		public string Brand { get; set; }
 
 		[Required]

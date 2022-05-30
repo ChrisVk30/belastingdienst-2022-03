@@ -29,17 +29,16 @@ namespace DemoProject.Pages
 
 		public async Task OnPostAsync()
 		{
-			Televisions = await TelevisionRepository.GetAll();
-
-			Thread.Sleep(3000);
 			if (!ModelState.IsValid)
 			{
+				Televisions = await TelevisionRepository.GetAll();
 				return;
 			}
 
 			await TelevisionRepository.Add(NewTelevision);
+			Televisions = await TelevisionRepository.GetAll();
+
 			Console.WriteLine($"Nieuwe tv: {NewTelevision.Brand} is {NewTelevision.Size}\" groot");
-			//Televisions.Add(NewTelevision);
 		}
 	}
 }
