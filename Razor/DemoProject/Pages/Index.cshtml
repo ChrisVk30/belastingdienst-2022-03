@@ -1,7 +1,38 @@
 ﻿@page
+@using DemoProject.Pages
 @model DemoProject.Pages.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-Hallo vanaf mijn eerste Razor Page
+<h2>Voeg tv toe</h2>
+
+<form method="post">
+    <ol>
+        <li>
+            <label for="input-brand">Merk:</label>
+            <input id="input-brand" asp-for="NewTelevision.Brand">
+            <span asp-validation-for="NewTelevision.Brand"></span>
+        </li>
+        <li>
+            <label for="input-price">Prijs:</label>
+            <input id="input-price" asp-for="NewTelevision.Price">
+            <span asp-validation-for="NewTelevision.Price"></span>
+        </li>
+        <li>
+            <label for="input-size">Grootte:</label>
+            <input type="number" asp-for="NewTelevision.Size" type="number" step="any" id="input-size">
+            <span asp-validation-for="NewTelevision.Size"></span>
+        </li>
+        <li>
+            <button>Voeg tv toe</button>
+        </li>
+    </ol>
+
+    @Html.AntiForgeryToken()
+</form>
+
+
+
+<h2>Lijst van tv's</h2>
 
 <table>
     <tr>
@@ -10,7 +41,7 @@ Hallo vanaf mijn eerste Razor Page
         <th>Prijs</th>
         <th>Grootte</th>
     </tr>
-    @foreach (var tv in Model.tvs)
+    @foreach (var tv in IndexModel.Televisions)
     {
         <tr>
             <td>@tv.Id</td>
