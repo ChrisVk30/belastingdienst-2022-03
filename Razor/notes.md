@@ -145,3 +145,44 @@ Betekenisvol betekent meestal ook 👍 voor a11y.
 <font>
 <blink>
 ```
+
+## Dependency injection
+
+- het injecteren van dependencies
+- het is een vorm van Inversion of Control
+- uitwisselbaar
+
+low coupling, high cohesion
+
+
+
+
+## Unittesten
+
+Verschillende soorten geautomatiseerd testen:
+
+- unittests
+- integratietests
+- end-to-end tests (UI tests)
+
+overige testen:
+- handmatige testen
+- penetration testing
+
+
+**MENING**
+
+wanneer je in JP's ogen niet hoeft te unittesten:
+
+- als je de stagiaire/tester alle tests laat schrijven
+- als je x% code coverage probeert te halen
+- als je project < 6 maanden duurt. let wel:
+
+    "niets is zo permanent als een tijdelijke oplossing"
+
+Verbeter de kwaliteit van je tests met [mutation testing](https://stryker-mutator.io/).
+
+
+
+
+
