@@ -1,4 +1,9 @@
 ﻿
+* {
+    box-sizing: border-box;
+}
+
+
 selector {
     property: value;
 }
@@ -56,3 +61,10 @@ footer {
     - class kun je meerdere malen gebruiken
 
 */
+
+#really-wide {
+    width: 100%;
+    height: 60px;
+    border: 10px solid black;
+    background: purple;
+}
