@@ -16,6 +16,7 @@ namespace DemoProject.Tests
         // methodname_state_expectedresult
         // different conventions available: https://dzone.com/articles/7-popular-unit-test-naming
 
+        private readonly List<TelevisionEntity> _televisionMockData = new List<TelevisionEntity>();
         private Mock<ITelevisionRepository> _mockTelevisionRepository;
         private IndexModel _sut;
 
@@ -25,12 +26,23 @@ namespace DemoProject.Tests
             // Arrange
             _mockTelevisionRepository = new Mock<ITelevisionRepository>(MockBehavior.Strict);
             _mockTelevisionRepository.Setup(x => x.Add(It.IsAny<TelevisionEntity>())).ReturnsAsync(new TelevisionEntity());
-            _mockTelevisionRepository.Setup(x => x.GetAll()).ReturnsAsync(new List<TelevisionEntity>());
+            _mockTelevisionRepository.Setup(x => x.GetAll()).ReturnsAsync(_televisionMockData);
 
             _sut = new IndexModel(_mockTelevisionRepository.Object); // System Under Test
             _sut.NewTelevision = new TelevisionEntity();
         }
 
+        [TestMethod]
+        public async Task OnGetAsync_StoreTelevisions()
+        {
+            // Act
+            await _sut.OnGetAsync();
+
+            // Assert
+            _mockTelevisionRepository.Verify(x => x.GetAll());
+            Assert.IsNotNull(_sut.Televisions);
+            Assert.AreEqual(_televisionMockData, _sut.Televisions);
+        }
 
         [TestMethod]
         public async Task OnPostAsync_ValidModel_AddAndRedirect()
