@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,13 @@ namespace DemoProject.Middleware
             }
             catch (Exception ex)
             {
+                Log.Logger = new LoggerConfiguration()
+                    .MinimumLevel.Debug()
+                    .WriteTo.File(@"C:\logs\seri.log")
+                    .CreateLogger();
+                Log.Warning("hallo");
+                Log.CloseAndFlush();
+
                 var msg = $"[{DateTime.Now.ToShortTimeString()}] Exception: {ex.Message}{Environment.NewLine}{ex.StackTrace}{Environment.NewLine}{Environment.NewLine}";
                 File.AppendAllText(@"C:\logs\errors.log", msg);
                 throw;

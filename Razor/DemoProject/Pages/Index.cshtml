@@ -1,18 +1,16 @@
 ﻿@page
-@using DemoProject.Pages
-@model DemoProject.Pages.IndexModel
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IndexModel
 
 <h2>Voeg tv toe</h2>
 
-<form method="post">
+<form method="post" autocomplete="off" id="mijn-form">
     <ol>
         <li>
             <label for="input-brand">Merk:</label>
             <input id="input-brand" asp-for="NewTelevision.Brand">
             <span asp-validation-for="NewTelevision.Brand"></span>
         </li>
-        <li>
+        <li class="speciaal">
             <label for="input-price">Prijs:</label>
             <input id="input-price" asp-for="NewTelevision.Price">
             <span asp-validation-for="NewTelevision.Price"></span>
@@ -22,7 +20,7 @@
             <input type="number" asp-for="NewTelevision.Size" type="number" step="any" id="input-size">
             <span asp-validation-for="NewTelevision.Size"></span>
         </li>
-        <li>
+        <li class="speciaal">
             <button>Voeg tv toe</button>
         </li>
     </ol>

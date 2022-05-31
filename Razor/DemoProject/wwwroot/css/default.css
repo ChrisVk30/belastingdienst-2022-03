@@ -1,0 +1,58 @@
+﻿
+selector {
+    property: value;
+}
+
+body {
+    background: lightgray;
+}
+
+input {
+    border: 2px solid darkgray;
+    padding: 6px;
+    margin: 4px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    outline: none;
+    border-radius: 7px;
+    transition: 2s ease all;
+}
+input:hover {
+    background: #75c3f2;
+}
+input:focus {
+    background: lightblue;
+    border-radius: 50%;
+}
+
+button {
+    border: 2px solid black;
+    background: lightpink;
+    padding: 7px;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+footer {
+    background: darkgray;
+    color: white;
+    margin-top: 30px;
+}
+
+
+.speciaal { /* classes */
+    background: lightblue;
+}
+
+#mijn-form { /* id's */
+    background: lightgreen;
+}
+
+/* websites wordpress
+    
+    internet explorer
+
+    class vs id?
+    - id ZOU UNIEK MOETEN ZIJN
+    - class kun je meerdere malen gebruiken
+
+*/

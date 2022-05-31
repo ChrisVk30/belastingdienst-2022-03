@@ -32,9 +32,11 @@ app.UseDeveloperExceptionPage();
 
 // note that there are much better logging solutions
 app.UseExceptionLoggingMiddleware(); // extension method
-// log4j
-// log4net
-// Serilog
+									 // log4j
+									 // log4net
+									 // Serilog
+
+app.UseStaticFiles();
 
 //app.UseMiddleware<ExceptionLoggingMiddleware>();
 
