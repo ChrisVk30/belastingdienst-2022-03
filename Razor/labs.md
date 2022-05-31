@@ -7,3 +7,4 @@ Het wordt een todo-webapplicatie.
    => met validaties uiteraard.
 3. Maak een repository die je pagina voorziet van de lijst van todos.
 4. Unittest jullie applicatie. Kies maar of je de Get of Post wil testen. Mock je repository weg.
+5. Maak een stuk middleware die alle 404's logt.
