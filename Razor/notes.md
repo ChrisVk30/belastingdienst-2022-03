@@ -196,6 +196,96 @@ NoSQL - MongoDB Cassandra Cosmos
 * `DbSet` voor tabel
 * Migrations om database up-/downgrades uit te voeren
 
+## Unittesten
+
+- zo klein mogelijk stukje code testen
+- mock dependencies weg
+
+mockframeworks
+- Moq
+- NSubstitute
+
+
+- mocha (javascript / node.js)
+  - is een testrunner, niet voor mocking
+
+
+.NET-testframeworks:
+- MSTest
+- xunit
+- nunit
+
+De verschillen? Subtiele detailsdingetjes.
+
+```cs
+// MSTest
+[ExpectedException(ArgumentException)]
+public void TestIets()
+{
+
+}
+
+// xunit
+public void XunitTest()
+{
+	Assert.Throws<ArgumentException>(() => page.Doe());
+}
+```
+
+```cs
+Assert.Equals("hoi", "hoi");
+```
+```
+MSTest: "hoi" does not equal "hoi"
+
+xunit: Two strings don't match
+"hoi"
+"hoi"
+```
+
+
+- integratietesten
+  - "het grotere geheel"
+  - database betrekken bij je test
+  - API test
+  - component
+
+- UI test / end-to-end (E2E) testen
+- handmatig testen
+
+
+Kwaliteit checken van je tests: **[mutation testing]((https://stryker-mutator.io/))**
+```cs
+if (x == 24)
+{
+	...
+}
+```
+
+X-Men
+William Stryker
+
+### Test-driven development
+
+- Eerste een test
+- Dan de code
+
+1. Schrijf een test
+2. Run de test en zie dat hij faalt
+3. Schrijf code
+4. Run de test en zie dat hij slaagt
+5. Refactor
+
+Repeat.
+
+RED-GREEN-REFACTOR
+
+
+
+
+
+
+
 
 
 
