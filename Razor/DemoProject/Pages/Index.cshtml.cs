@@ -27,18 +27,16 @@ namespace DemoProject.Pages
 			Televisions = await TelevisionRepository.GetAll();
 		}
 
-		public async Task OnPostAsync()
+		public async Task<IActionResult> OnPostAsync()
 		{
 			if (!ModelState.IsValid)
 			{
 				Televisions = await TelevisionRepository.GetAll();
-				return;
+				return Page(); // render current page with validation messages
 			}
 
 			await TelevisionRepository.Add(NewTelevision);
-			Televisions = await TelevisionRepository.GetAll();
-
-			Console.WriteLine($"Nieuwe tv: {NewTelevision.Brand} is {NewTelevision.Size}\" groot");
+			return RedirectToPage(); // redirect using GET request
 		}
 	}
 }

@@ -6,3 +6,4 @@ Het wordt een todo-webapplicatie.
 2. Voeg een formulier toe aan jullie pagina om nieuwe todos toe te voegen.
    => met validaties uiteraard.
 3. Maak een repository die je pagina voorziet van de lijst van todos.
+4. Unittest jullie applicatie. Kies maar of je de Get of Post wil testen. Mock je repository weg.
