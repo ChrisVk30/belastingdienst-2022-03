@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Document</title>
+	<!-- <script src="intro-to.js"></script> -->
+	<script src="dom.js" defer></script>
+</head>
+<body>
+
+	<form autocomplete="off" id="mijn-form">
+		<ol>
+			<li>
+				<label for="input-brand">Merk:</label>
+				<input id="input-brand" type="text" data-val="true" data-val-maxlength="The field Brand must be a string or array type with a maximum length of &#x27;40&#x27;." data-val-maxlength-max="40" data-val-regex="Alleen letters en cijfers graag" data-val-regex-pattern="^[a-zA-Z0-9]&#x2B;$" data-val-required="Vul dit in aub" maxlength="40" name="NewTelevision.Brand" value="">
+				<span class="field-validation-valid" data-valmsg-for="NewTelevision.Brand" data-valmsg-replace="true"></span>
+			</li>
+			<li class="speciaal">
+				<label for="input-price">Prijs:</label>
+				<input id="input-price" type="text" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." name="NewTelevision.Price" value="">
+				<span class="field-validation-valid" data-valmsg-for="NewTelevision.Price" data-valmsg-replace="true"></span>
+			</li>
+			<li>
+				<label for="input-size">Grootte:</label>
+				<input type="number" step="any" id="input-size" data-val="true" data-val-number="The field Size must be a number." data-val-required="The Size field is required." name="NewTelevision.Size" value="">
+				<span class="field-validation-valid" data-valmsg-for="NewTelevision.Size" data-valmsg-replace="true"></span>
+			</li>
+			<li class="speciaal">
+				<button>Voeg tv toe</button>
+			</li>
+		</ol>
+	</form>
+
+	
+	<h2>Lijst van tv's</h2>
+	
+	<table>
+		<template id="tv-template">
+			<tr>
+				<td class="id"></td>
+				<td class="brand"></td>
+				<td>&euro; <span class="price"></span></td>
+				<td><span class="size"></span>&quot;</td>
+			</tr>
+		</template>
+		<tr>
+			<th>ID</th>
+			<th>Merk</th>
+			<th>Prijs</th>
+			<th>Grootte</th>
+		</tr>
+			<tr>
+				<td>1</td>
+				<td>Samsung</td>
+				<td>&euro; 988,00</td>
+				<td>67,00&quot;</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Puma</td>
+				<td>&euro; 9495,00</td>
+				<td>494,00&quot;</td>
+			</tr>
+	</table>
+
+</body>
+</html>

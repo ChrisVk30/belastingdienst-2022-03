@@ -16,4 +16,5 @@ Het wordt een todo-webapplicatie.
 7. Maak een REST API om je todos vanaf op te halen en toe te voegen.
    * Test deze met een API testing tool (Postman, Imsomnia, VS Code REST Client, ...)
 8. Integreer Swagger en Swagger UI bij jullie REST API.
-
+9. Zet je huidige pagina om naar een JavaScript-versie.
+   => niet je .cshtml weggooien, maak een nieuw .html-bestand en kopieer de HTML-output van je Razor Page.
