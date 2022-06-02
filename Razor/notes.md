@@ -354,10 +354,6 @@ Lastige van REST APIs?
 * /api/televisions?v=1 // querystring parameter
 * X-API-VERSION: 1; // exotische optie: custom HTTP header
 
-
-
-
-
 ## JavaScript
 
 - taal
@@ -390,6 +386,20 @@ C#:
 DOM
 => Document Object Model
 
+### AJAX
 
+=> Asynchronous JavaScript And XML (2005)
+=> Asynchronous JavaScript And JSON  - AJAJ
+   => bekt niet lekker. AJAX wel: Griekse held, voetbalclub
 
+=> HTTP-berichtjes sturen vanuit JavaScript
 
+```js
+// oldskool manier
+XMLHttpRequest (xhr)
+
+// 2014
+fetch()
+```
+
+CORS: Cross Origin Resource Sharing. De browser checkt of de server het goed vindt om van een ander domein berichten te ontvangen.
