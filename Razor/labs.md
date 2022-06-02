@@ -18,3 +18,4 @@ Het wordt een todo-webapplicatie.
 8. Integreer Swagger en Swagger UI bij jullie REST API.
 9. Zet je huidige pagina om naar een JavaScript-versie.
    => niet je .cshtml weggooien, maak een nieuw .html-bestand en kopieer de HTML-output van je Razor Page.
+10. GET en POST data van/naar je API vanaf de JavaScript-versie van je pagina.

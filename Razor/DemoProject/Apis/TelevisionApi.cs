@@ -23,6 +23,7 @@ namespace DemoProject.Apis
 		[HttpGet]
 		public async Task<IEnumerable<TelevisionEntity>> GetAll()
 		{
+			Thread.Sleep(3000);
 			return await _televisionRepository.GetAll();
 		}
 
