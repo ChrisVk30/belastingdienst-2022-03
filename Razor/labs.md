@@ -15,3 +15,5 @@ Het wordt een todo-webapplicatie.
    * Maak je webpagina iets mooier/vriendelijker met CSS.
 7. Maak een REST API om je todos vanaf op te halen en toe te voegen.
    * Test deze met een API testing tool (Postman, Imsomnia, VS Code REST Client, ...)
+8. Integreer Swagger en Swagger UI bij jullie REST API.
+

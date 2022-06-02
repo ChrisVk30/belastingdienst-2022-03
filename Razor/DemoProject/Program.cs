@@ -2,6 +2,9 @@ using DemoProject.DataAccess;
 using DemoProject.Middleware;
 using DemoProject.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +15,27 @@ builder.Services.AddDbContext<MediaContext>(options =>
 	options.UseSqlServer("Server=.; Database=mediadb; Integrated Security=true;");
 });
 
-builder.Services.AddControllers();
+
+builder.Services.AddSwaggerGen(options =>
+{
+	options.SwaggerDoc("v1", new OpenApiInfo
+	{
+		Title = "Nog steeds mijn beste API",
+		Version = "v1"
+	});
+});
+
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+	options.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.Objects;
+});
+
+//	.AddJsonOptions(options =>
+//{
+//	//options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+//	/*options.JsonSerializerOptions.Converters.Add(*/
+//	// datums en tijdzones
+//});
 builder.Services.AddRazorPages();
 
 // every time a new instance
@@ -37,8 +60,18 @@ app.UseExceptionLoggingMiddleware(); // extension method
 									 // log4net
 									 // Serilog
 
-app.UseStaticFiles();
 
+app.UseSwagger();
+
+if (app.Environment.IsDevelopment())
+{
+	app.UseSwaggerUI(options =>
+	{
+		options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+	});
+}
+
+app.UseStaticFiles();
 //app.UseMiddleware<ExceptionLoggingMiddleware>();
 
 
