@@ -281,11 +281,114 @@ Repeat.
 RED-GREEN-REFACTOR
 
 
+## REST APIs
+
+REpresentational State Transfer API
+
+- Data teruggeven in het formaat dat de client wil: JSON/XML/...
+- data losgekoppeld van UI
+- flexibiliteit richting meerdere clients
+- sinds 2000
+
+minder dit:
+```sh
+GET index.php?action=delete_customer&id=14
+```
+
+en meer terug naar HTTP verbs zoals ze ooit bedoeld zijn:
+
+* GET  	informatie ophalen
+* POST  	informatie toevoegen
+* PUT  	informatie wijzigen (update)
+* DELETE	informatie verwijderen
+* PATCH	informatie deels wijzigen
+
+minder ideaal aan deze verbs: processen uitdrukken met deze verbs
+
+alternatieven voor REST:
+
+- SOAP
+  => Web Service Definition Language
+  => XML
+  - omslachtig
+  - "voelt niet heel webberig aan"
+
+- GraphQL
+  - niveau van detail
+  - Meta
+
+- gRPC
+  - Efficient binair formaat
+  - Grote hoeveelheden data (> 10MB)
+
+
+
+ASP.NET Core 1.0 Newtonsoft.Json
+ASP.NET Core 2.0 Newtonsoft.Json
+ASP.NET Core 3.0 System.Text.Json - performance
+ASP.NET Core 5.0 System.Text.Json 
+
+### Verwant aan REST
+
+* Swagger
+  - API documentatie
+  - SwaggerUI
+    - UI vergelijkbaar met Postman/Insomnia om API requests te sturen
+* recursiviteit
+* opties instellen
+* maturity levels, level 2 zitten de meeste projecten, level 3: Hypermedia As The Engine Of Application State
+	```json
+	{
+		"brand": "Samsung",
+		"size": 4,
+		"links": [
+			"details": "api/television/14/details"
+		]
+	}
+	```
+
+Lastige van REST APIs?
+=> versionering
+
+* /api/v1/televisions
+* /api/televisions?v=1 // querystring parameter
+* X-API-VERSION: 1; // exotische optie: custom HTTP header
 
 
 
 
 
+## JavaScript
+
+- taal
+- in de browser (1996)
+  => interactie, gedrag
+
+- niet in de browser - Node.js (2009 => 2011)
+
+
+- HTML-elementen
+  - aanmaken
+  - verwijderen
+  - attributen aanpassen
+  - tekst
+- events
+  - keypress keydown keyup
+  - mousemove mouseover click dblclick
+  - form submit
+  - scroll
+
+Taal:
+- flexibel
+- dynamisch
+
+C#:
+- star
+- static  var getal = 13;
+
+
+DOM
+=> Document Object Model
 
 
 
