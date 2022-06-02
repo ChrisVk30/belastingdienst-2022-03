@@ -13,4 +13,5 @@ Het wordt een todo-webapplicatie.
    * Gebruik een `_ViewStart` om algemene viewinstellingen vast te leggen (zoals de verwijzing naar de layout page)
    * Gebruik een `_ViewImports` om algemene viewimports vast te leggen (`using`s en `@addTagHelper`)
    * Maak je webpagina iets mooier/vriendelijker met CSS.
-    
+7. Maak een REST API om je todos vanaf op te halen en toe te voegen.
+   * Test deze met een API testing tool (Postman, Imsomnia, VS Code REST Client, ...)

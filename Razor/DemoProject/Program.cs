@@ -9,9 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MediaContext>(options =>
 {
-	options.UseSqlServer("Server=.\\SQLEXPRESS; Database=mediadb; Integrated Security=true;");
+	options.UseSqlServer("Server=.; Database=mediadb; Integrated Security=true;");
 });
 
+builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 
 // every time a new instance
@@ -43,6 +44,11 @@ app.UseStaticFiles();
 
 // wat er met ieder request moet gebeuren
 // middleware
+
+app.MapControllers();
+// : ControllerBase
+// suffix Controller
+// Controllers/
 
 app.MapRazorPages();
 
