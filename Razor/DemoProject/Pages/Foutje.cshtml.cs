@@ -11,7 +11,7 @@ namespace DemoProject.Pages
     {
         public void OnGet()
         {
-            throw new NotImplementedException("Ga weg");
+            //throw new NotImplementedException("Ga weg");
         }
     }
 }

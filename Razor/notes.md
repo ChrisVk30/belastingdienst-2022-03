@@ -403,3 +403,40 @@ fetch()
 ```
 
 CORS: Cross Origin Resource Sharing. De browser checkt of de server het goed vindt om van een ander domein berichten te ontvangen.
+
+## Authenticatie/autorisatie
+
+Ook wel: inloggen.
+
+* identificatie: wie ben je
+* authenticatie: bewijs dat jij dat bent
+* autorisatie: wat mag je
+
+n-factor authentication
+two-factor authentication
+
+iets wat je weet - username/password
+iets wat je hebt - apparaatje (smartphone)
+
+iets wat je bent - bloed iris vingerafdruk
+=> vertrouw je de sensor? werkt hij uberhaupt
+=> wat je bent kan je niet veranderen.
+
+### History
+
+ASP.NET 2.0 - 2005
+
+- MembershipProvider
+  - SqlMembershipProvider
+  - SimpleMembershipProvider
+  - UniversalProvider (Azure)
+
+ASP.NET MVC 5 (2014)
+- Identity Framework
+
+ASP.NET Core
+- Identity Framework
+
+
+
+
