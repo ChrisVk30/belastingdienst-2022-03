@@ -25,6 +25,11 @@ namespace DemoProject.Pages
 
         public async Task OnGetAsync()
         {
+            if (RouteData.Values["action"] == null)
+            {
+                return;
+            }
+
             if (RouteData.Values["action"].ToString() == "register")
             {
                 await Register();
@@ -48,7 +53,7 @@ namespace DemoProject.Pages
                 FavoriteMerk = "Samsung",
                 FavoriteSize = 65M
             }, "Top$ecret123 WORK NOW DAMNIT");
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
                 Status = "Geregistreerd!";
             }
