@@ -1,6 +1,8 @@
 using DemoProject.DataAccess;
+using DemoProject.Entities;
 using DemoProject.Middleware;
 using DemoProject.Repositories;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
@@ -12,9 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MediaContext>(options =>
 {
-	options.UseSqlServer("Server=.; Database=mediadb; Integrated Security=true;");
+	options.UseSqlServer("Server=.\\SQLEXPRESS; Database=mediadb; Integrated Security=true;");
 });
 
+builder.Services.AddIdentity<MediaUser, IdentityRole>().AddEntityFrameworkStores<MediaContext>();
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -60,6 +63,7 @@ app.UseExceptionLoggingMiddleware(); // extension method
 									 // log4net
 									 // Serilog
 
+app.UseAuthentication(); // leest authenticatiecookie uit en stelt dan in: User, Request.IsAuthenticated
 
 app.UseSwagger();
 

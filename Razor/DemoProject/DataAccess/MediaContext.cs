@@ -1,4 +1,5 @@
 ﻿using DemoProject.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DemoProject.DataAccess
 {
-    public class MediaContext : DbContext
+    public class MediaContext : IdentityDbContext<MediaUser>
     {
         public DbSet<TelevisionEntity> Televisions { get; set; }
 

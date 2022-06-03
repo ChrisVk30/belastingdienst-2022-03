@@ -1,0 +1,15 @@
+﻿@page "{action}"
+@model AuthModel
+
+<h1>Auth</h1>
+
+Ingelogde gebruiker: @(User.Identity != null && User.Identity.IsAuthenticated ? User.Identity.Name : "niet ingelogd")<br>
+
+Status: @Model.Status
+
+<hr>
+
+<a href="/auth/register">Register</a> |
+<a href="/auth/login">Log in</a> |
+<a href="/auth/logout">Log out</a> |
+<a href="/auth/do-nothing">Do nothing</a>
