@@ -19,3 +19,5 @@ Het wordt een todo-webapplicatie.
 9. Zet je huidige pagina om naar een JavaScript-versie.
    => niet je .cshtml weggooien, maak een nieuw .html-bestand en kopieer de HTML-output van je Razor Page.
 10. GET en POST data van/naar je API vanaf de JavaScript-versie van je pagina.
+11. Het wordt een familie-todo-app. Registreer wie een todo-item heeft toegevoegd.
+   => terug naar je Razor Page.
