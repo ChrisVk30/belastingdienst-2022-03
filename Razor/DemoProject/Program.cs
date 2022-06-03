@@ -41,6 +41,8 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 //});
 builder.Services.AddRazorPages();
 
+builder.Services.ConfigureApplicationCookie(options => options.LoginPath = "/logindeze");
+
 // every time a new instance
 // uses the most memory
 // no side effects
@@ -64,6 +66,8 @@ app.UseExceptionLoggingMiddleware(); // extension method
 									 // Serilog
 
 app.UseAuthentication(); // leest authenticatiecookie uit en stelt dan in: User, Request.IsAuthenticated
+
+app.UseAuthorization();
 
 app.UseSwagger();
 
