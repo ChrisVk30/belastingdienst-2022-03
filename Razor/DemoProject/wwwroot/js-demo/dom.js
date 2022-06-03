@@ -10,14 +10,7 @@ function getTelevisions() {
 	});
 }
 
-// fetch({
-// 	url: 'https://localhost:7037/api/television',
-// 	method: 'post',
-// 	headers: {
-// 		'content-type': 'application/json'
-// 	},
-// 	body: JSON.stringify({x : 24})
-// })
+
 
 
 document.querySelector('form').addEventListener('submit', function(event) {
@@ -29,7 +22,14 @@ document.querySelector('form').addEventListener('submit', function(event) {
 		size: +document.querySelector('#input-size').value
 	};
 
-	addTelevisionToTable(newTelevision);
+	fetch('https://localhost:7037/api/television', {
+		method: 'POST',
+		headers: {
+			'content-type': 'application/json'
+		},
+		body: JSON.stringify(newTelevision)
+	}).then(x => x.json()).then(tv => addTelevisionToTable(tv));
+
 
 	// DOM API
 
@@ -55,7 +55,7 @@ function addTelevisionToTable(tv) {
 	let template = document.querySelector('#tv-template').content;
 	let clone = template.cloneNode(true);
 
-	clone.querySelector('.id').innerText = '912';
+	clone.querySelector('.id').innerText = tv.id;
 	clone.querySelector('.brand').innerText = tv.brand;
 	clone.querySelector('.price').innerText = tv.price;
 	clone.querySelector('.size').innerText = tv.size;
