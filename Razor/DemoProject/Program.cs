@@ -1,5 +1,6 @@
 using DemoProject.DataAccess;
 using DemoProject.Entities;
+using DemoProject.Hubs;
 using DemoProject.Middleware;
 using DemoProject.Repositories;
 using Microsoft.AspNetCore.Identity;
@@ -15,6 +16,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMemoryCache();
 
 builder.Services.AddSession();
+
+builder.Services.AddSignalR();
 
 //builder.Services.AddDistributedMemoryCache();
 //builder.Services.AddRedis();
@@ -90,6 +93,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 //app.UseMiddleware<ExceptionLoggingMiddleware>();
+
+app.MapHub<ChatHub>("/chatHub");
 
 app.UseSession();
 

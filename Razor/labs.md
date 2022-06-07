@@ -24,3 +24,5 @@ Het wordt een todo-webapplicatie.
 12. Cache je todos bij je API.
    => kies wat je fijn vindt.
    => Redis: lokaal duurt dat nogal ff.
+13. Als een ander familielid een todo-item toevoegt, moet dat direct zichtbaar zijn voor de overige familieleden.
+   => vanaf je JS-pagina

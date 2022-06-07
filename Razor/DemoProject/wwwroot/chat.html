@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <script src="libs/signalr/signalr.js"></script>
+    <script src="js/chat.js" defer></script>
+    <style>
+        #chat-messages {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Beste chat</h1>
+
+    <form onsubmit="say(); return false;">
+        <input id="input-name" placeholder="Je naam graag">
+        <input id="input-content" placeholder="Je bijdrage graag">
+        <button>Zeg!</button>
+    </form>
+
+    <ol id="chat-messages">
+        <template id="chat-message-template">
+            <li>
+                <strong class="name"></strong>:
+                <span class="content"></span>
+            </li>
+        </template>
+    </ol>
+
+</body>
+</html>
