@@ -553,4 +553,28 @@ DDoS aanval
 distributed denial of service
 
 
+## Deployment
 
+- Standalone
+- Webserver (IIS, Apache, nginx)
+  "reverse proxy"
+- Azure
+  - Visual Studio heeft een wizard: rechtermuisknop op project > Publish
+- Docker
+  - containers makan
+  - opspinnen
+
+### Docker
+
+containerization of software.
+
+* beheerder wil de software gewoon deployen, net als dat een schipkapitein goederen wil vervoeren
+* geen gevoel hebben bij een specifieke deployment/container. Net als een zeecontainer, zit er een gat in? Andere container neerzetten, klaar.
+
+vroeger: installatiehandleidingen
+Ontwikkel-Test-FAT GAT PAT-Productie
+
+Orchestration:
+* docker-compose
+* kubernetes
+* dynamische schaalbaarheid: geautomatiseerde coordinatie van deployments
