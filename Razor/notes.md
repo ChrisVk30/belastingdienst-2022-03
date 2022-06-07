@@ -438,5 +438,119 @@ ASP.NET Core
 - Identity Framework
 
 
+## State
+
+Caching: het onthouden van dingen.
+Sessions: het onthouden van gebruikersspecifieke dingen.
+
+
+## Security (hacking)
+
+- injecties
+  => SQL
+
+- Man-in-the-Middle
+- phishing
+  - voornamelijk mails
+  - bellen
+  - voorkomen? informeren, gebruikers bewust maken
+  - herkennen?
+    - domein
+    - afzender    Simple MTP
+    - taal
+    - persoonlijk
+
+- XSS - Cross Site Scripting
+  - een hacker JavaScript in iemands browser uit kan voeren
+
+  	hoi allemaal!
+
+    ```html
+    <script>window.location.href='https://evilsite.nl';</script>
+    ```
+	  - Reddit
+	  - YouTube
+	  - Wikipedia
+	  - Alle forums
+	  - dumpert
+
+- XSRF - Cross Site Request Forgery
+  => wanneer een hacker een gebruiker weet te overtuigen om een bepaalde request te maken
+
+- Social engineering
+  - Vaak fysiek
+    => in pak / in werkkleding
+    => deuren
+  - Telefoontjes
+
+mail:
+```html
+<img src="https://rabobank.nl/overboeken?van=24389459&naar=3945905&hoeveelheeid=9999999999999">
+```
+
+OWASP
+- Top 10
+- ASVS
+- WebGoat
+- Zed Attack Proxy
+
+
+
+adresbalk: id=1 OR 1=1
+
+// oud PHP
+$sql = 'SELECT * FROM customer WHERE id = ' + $_GET['id'];
+$result = mysql_query($sql);
+
+// ORM: Entity Framework Core
+await context.Customer.Where(x => x.Id == id).ToListAsync();
+
+context.Database.ExecuteSqlRaw("...")
+
+
+## HTTP
+
+HTTP 1.1
+- .css
+- .js
+- images
+
+HTTP/2 SPDY
+- "multiplexing" TCP-kanaal hergebruiken
+
+HTTP/3 QUIC
+- UDP
+
+
+### Content Delivery Network
+
+De browser stuurt maximaal zo'n 6-10 HTTP-requests naar dezelfde hostname 
+
+belastingdienst.nl
+s1.belastingdienst.nl
+static22.facebook.com
+
+cdnjs.com
+=> jquery.js
+- performance
+- security is voor de meeste serieuze webapplicaties een reden om deze niet te gebruiken
+- leuk voor hobbysites, wordpresssites, training
+
+index.html
+.css
+.css
+.js
+.js
+.js
+.js
+.js
+.js
+plaatjes
+video
+
+DDoS aanval
+
+distributed denial of service
+
 
 
