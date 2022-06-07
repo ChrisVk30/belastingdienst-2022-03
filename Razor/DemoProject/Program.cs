@@ -12,6 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // grote bouwblokken & dependency injection
 
+builder.Services.AddMemoryCache();
+
+builder.Services.AddSession();
+
+//builder.Services.AddDistributedMemoryCache();
+//builder.Services.AddRedis();
+//builder.Services.AddResponseCaching();
+
 builder.Services.AddDbContext<MediaContext>(options =>
 {
 	options.UseSqlServer("Server=.\\SQLEXPRESS; Database=mediadb; Integrated Security=true;");
@@ -71,6 +79,7 @@ app.UseAuthorization();
 
 app.UseSwagger();
 
+
 if (app.Environment.IsDevelopment())
 {
 	app.UseSwaggerUI(options =>
@@ -82,6 +91,7 @@ if (app.Environment.IsDevelopment())
 app.UseStaticFiles();
 //app.UseMiddleware<ExceptionLoggingMiddleware>();
 
+app.UseSession();
 
 // wat er met ieder request moet gebeuren
 // middleware

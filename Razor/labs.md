@@ -21,3 +21,6 @@ Het wordt een todo-webapplicatie.
 10. GET en POST data van/naar je API vanaf de JavaScript-versie van je pagina.
 11. Het wordt een familie-todo-app. Registreer wie een todo-item heeft toegevoegd.
    => terug naar je Razor Page.
+12. Cache je todos bij je API.
+   => kies wat je fijn vindt.
+   => Redis: lokaal duurt dat nogal ff.
