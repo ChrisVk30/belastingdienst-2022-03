@@ -49,3 +49,9 @@ document.querySelector('#input-wow').addEventListener('keyup', event => {
 function wow() {
     console.log('wow triggered');
 }
+
+
+let nogeentje = 4 + '5';
+let nogeentje2 = true + '5';
+console.log("4 + '5'", nogeentje);
+console.log("true + '5'", nogeentje2);
