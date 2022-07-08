@@ -30,13 +30,15 @@ doe(null, 10);
 
 // lambda
 console.log(this);
-let arrow = (p1, p2 = 'hoi') => {
+let arrow = (p1, p2 = 'hoi', ...rest) => {
+    
     console.log('hallo vanuit arrow', this);
 };
 arrow.call({ x: 24 });
 
 // no new
 // geen prototype
+// geen arguments
 // this voorspelbaarder
 
 // IIFE
@@ -54,3 +56,7 @@ arrow.call({ x: 24 });
 // document.querySelector('...').addEventListener('click', () => {
 
 // });
+
+// Date.prototype.toPrettyString = () => {
+//     this.getDate() this.getMonth()
+// };
