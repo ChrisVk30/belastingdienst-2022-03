@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<button id="button1">Button 1</button><br>
+	<button id="button2">Button 2</button><br>
+	<button id="button3">Button 3</button><br>
+	<button id="button4">Button 4</button><br>
+</body>
+<script>
+	// the issue
+	// for (var i = 1; i < 5; i++) {
+	// 	var btn = document.querySelector('#button' + i);
+	// 	btn.addEventListener('click', () => console.log('You clicked on button ' + i));
+	// }
+
+	// // (solution using an IIFE)
+	// for (var i = 1; i < 5; i++) {
+	// 	(function(value) {
+	// 		var btn = document.querySelector('#button' + value);
+	// 		btn.addEventListener('click', () => console.log('You clicked on button ' + value));
+	// 	})(i)
+	// }
+
+	// ES2015 solution: let
+	for (let i = 1; i < 5; i++) {
+		var btn = document.querySelector('#button' + i);
+		btn.addEventListener('click', () => console.log('You clicked on button ' + i));
+	}
+</script>
+</html>

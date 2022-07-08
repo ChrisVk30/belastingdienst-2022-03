@@ -135,7 +135,55 @@ console.log(createVector(3, 4)); // => { x: 3,  y: 4 }
 console.log(createVector(7.07)); // => { x: 5,  y: 5 }
 //   createVector('hoi', 'doei', 'bla');   // => { x: 5,  y: 5 }
 
-overload(
-	function (a, b) {},
-	function (x, y) {}
-); // error
+// overload(
+// 	function (a, b) {},
+// 	function (x, y) {}
+// ); // error
+
+
+// object lab
+
+Function.prototype.getName = function() {
+	return reflection.functionName(this);
+};
+console.log('functienaam:', reflection.functionName.getName());
+
+
+!function(ns) {
+	ns.Customer = function(id, name, city) {
+		this.id = id;
+		this.name = name;
+		this.city = city;
+		let nrOfUnpaidBills = 0; // private
+
+		this.buyStuff = function() {
+			nrOfUnpaidBills++;
+		};
+		this.payBill = function() {
+			nrOfUnpaidBills--;
+		};
+		this.badPayer = function(n) {
+			return nrOfUnpaidBills >= n;
+		};
+	};
+	ns.Customer.prototype.toString = function() {
+		return '(' + this.id + ') ' + this.name + ' - ' + this.city;
+	};
+}(
+	(
+		globalThis.com = globalThis.com || {},
+		com.yourCompany = com.yourCompany || {},
+		com.yourCompany.CRM = com.yourCompany.CRM || {}
+	)
+);
+
+let jp = new com.yourCompany.CRM.Customer(8, 'JP', 'Ede');
+console.log(jp);
+console.log(jp.toString());
+jp.buyStuff();
+jp.buyStuff();
+jp.buyStuff();
+jp.buyStuff();
+jp.payBill();
+console.log(jp.badPayer(2));
+console.log(jp.badPayer(4));

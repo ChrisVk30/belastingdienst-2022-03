@@ -1,0 +1,19 @@
+{
+  "name": "lab01._gulp",
+  "version": "1.0.0",
+  "description": "To restore the node_module folder, in npm run:",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "rimraf": "^2.6.3"
+  }
+}
