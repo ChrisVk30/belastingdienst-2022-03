@@ -26,5 +26,16 @@ Node.js
 - V8
 
 
+## Reguliere expressies
 
+```html
+<p>hoi</p><p>hallo</p><p>doei</p>
+```
+```js
+let regex = /<p>.+<\/p>/giu;
+```
 
+standaardvlaggetjes:
+* greedy
+* case-insensitive
+* unicode
