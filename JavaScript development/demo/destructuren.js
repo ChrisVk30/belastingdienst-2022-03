@@ -5,12 +5,14 @@ let obj = {
 };
 
 let {
-    x,
+    x: xblabla,
+	dinges = 'wow',
     favorieteChips: [eersteChips, tweeedeChips]
 } = obj;
 
 console.log(obj.x);
-console.log(x);
+console.log(xblabla);
+console.log(dinges);
 console.log('chips:', eersteChips, tweeedeChips);
 
 let lijstje = [4, 8, 15, 16, 23, 42];
