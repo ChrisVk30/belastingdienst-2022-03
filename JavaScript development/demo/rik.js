@@ -1,93 +1,94 @@
-let createBill = function({number, amount}){
-    return {        
-        number,
-        amount,
-        paid: false
+class Phone{
+    brand = null;
+    type = null;
+    appDrawer = null;
+    constructor(){
+        this.appDrawer = new AppDrawer(new Calculator(), new AddressBook());
     }
 }
-let createCustomer = function(id, name, city){
-    let billsCollection = new Map();
-    return{
-        id,
-        name,
-        city,
-        bills: {
-            add: (obj = {})=>{
-                billsCollection.set(obj.number, createBill(obj))
-            },
-            pay: (id) =>{
-                
-                billsCollection.get(id).paid = true;
-            },
-            unpaid: () => {
-                let unpaidBills = [...billsCollection.values()].filter(x => !x.paid);
-
-                return{
-                    [Symbol.iterator](){
-                        let index = 0;
-                        return{
-                            next(){ 
-                                return {
-                                    value: unpaidBills[index++],
-                                    done: index > unpaidBills.length
-                                };                        
-                            }
-                        }
-                    }
-                }                
-            },
-            paid: () =>{
-                return{
-                    [Symbol.iterator](){
-                        let index = 0;
-                        return{
-                            next(){ 
-                                let value = billsCollection.get([...billsCollection.keys()][index]);
-                                while (index < billsCollection.size) {
-                                    value = billsCollection.get([...billsCollection.keys()][index]);;
-                                    if (value.paid===true){
-                                        break;
-                                    }
-                                    index++;
-                                }
-                                return{
-                                    value,
-                                    done: index++ >= billsCollection.size - 1
-                                }
-                            }
-                        }
-                    }
-                } 
-            },
-            number: 0,
-            amount: 0
+class AppDrawer{
+    get addressBook(){
+        console.log('entries:', this.apps.values());
+        return [...this.apps.values()].find(p=>{
+            return p instanceof AddressBook
+        });
+    }
+    get calculator(){
+        return [...this.apps.values()].find(p=>{
+            return p instanceof Calculator
+        });
+    }
+    apps = new Set();
+    
+    addApp(app){
+        if(!(app instanceof App)){
+            throw new Error(`App is not an app!`);
         }
+        this.apps.add(app);
+    }
+    getApps(){
+ 
+    }
+    [Symbol.iterator](){
+        return this.apps
+    }
+    constructor(calculator, addressbook){
+        this.addApp(addressbook);
+        this.addApp(calculator);
     }
 }
- 
-let c1 = createCustomer(1, "Mario", "Roma");
-console.log(`${c1.id} - ${c1.name}, ${c1.city}`);
-c1.bills.add({ number: 'ab123', amount: 123 });
-c1.bills.add({ number: 'ab123', amount: 123 });
-c1.bills.add({ number: 'cd456', amount: 456 });
-c1.bills.add({ number: 'ef789', amount: 789 });
-c1.bills.add({ number: 'gh012', amount: 128 });
-c1.bills.add({ number: 'ij386', amount: 946 });
- 
-console.log('*********unpaid***********');
-for (const b of c1.bills.unpaid()) {
-  console.log(b.number, b.amount);
+class App{
+    名前 = "";
+    constructor(名前) {
+        if (this.constructor === App) {
+            throw new Error("OI, not !abstract enough");
+        }
+        this.名前 = 名前;
+    }    
+    start(){
+        console.log(this.名前)
+    }
 }
+class AddressBook extends App{
+    constructor(){
+        super("AddressBook")
+    }
+    contacts = new Set();
+    addContact(contact){
+        if(!(contact instanceof Contacts)){
+            throw new Error("Not a contact");
+        }
+        this.contacts.add(contact);
  
-c1.bills.pay('ef789');
-c1.bills.pay('cd456');
+    }
+    getContacts(){
  
-console.log('*********unpaid***********');
-for (const b of c1.bills.unpaid()) {
-  console.log(b.number, b.amount);
+    }
+    [Symbol.iterator](){
+        return this.contacts;
+    }
 }
- 
-console.log('**********paid************');
-for (const b of c1.bills.paid()) {
-  console.log(b.number, b.amount);
+class Contacts{
+    firstName = "";
+    surname="";
+    phoneNumber="0";
 }
+class Calculator extends App{
+    constructor(){
+        super("Calculator");
+    }
+    add(...x){
+        return x[0] + x[1];
+    }
+    multiply(...x){
+        return x[0] * x[1];
+    }
+    divide(...x){
+        return x[0] / x[1];
+    }
+    subtract(...x){
+        return x[0] - x[1];
+    }
+}
+let phone = new Phone();
+console.log(phone.appDrawer)
