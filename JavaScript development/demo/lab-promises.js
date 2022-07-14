@@ -1,7 +1,16 @@
+fetch("./book/story.json")
+	.then((x) => x.json())
+	.then((story) => {
+		console.log(story);
+		console.log(story.title);
 
+		let fetches = [];
 
-fetch('story.json').then(x => x.json()).then(story => {
-    console.log(story);
+		for (let chapterUrl of story.chapterUrls) {
+			fetches.push(fetch(chapterUrl).then((x) => x.json()));
+		}
 
-    // story.chapterUrls
-});
+		Promise.allSettled(fetches).then((results) => {
+			console.log(results);
+		});
+	});

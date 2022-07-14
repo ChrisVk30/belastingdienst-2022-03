@@ -39,3 +39,9 @@ standaardvlaggetjes:
 * greedy
 * case-insensitive
 * unicode
+
+## Promises
+
+* wrappers om async processen
+* vergelijkbaar met bij een snackbar eten bestellen. Je krijgt niet meteen eten, je moet even wachten op het resultaat (resolve). En de frituurpan kan exploderen in het proces (reject).
+* is voornamelijk een schrijfwijze om code leesbaar te houden. zie ook Pyramid of Doom.
