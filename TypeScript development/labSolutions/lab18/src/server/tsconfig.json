@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.settings.json",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "outDir": "../../dist/server"
+  },
+  "references": [
+    {
+      "path": "../shared"
+    }
+  ]
+}
