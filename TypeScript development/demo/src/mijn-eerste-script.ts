@@ -20,7 +20,7 @@ function doe2(naam?: string) {
 doe();
 
 class Haha {
-	x: number;
+	x!: number;
 	constructor() {
 		// this.x = 23;
 	}
@@ -29,6 +29,6 @@ class Haha {
 
 let _this = {};
 
-const func = () => {
-	console.log(this);
-};
+// const func = () => {
+// 	console.log(this);
+// };

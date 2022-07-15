@@ -21,7 +21,7 @@ class Haha {
     }
 }
 let _this = {};
-const func = () => {
-    console.log(this);
-};
+// const func = () => {
+// 	console.log(this);
+// };
 //# sourceMappingURL=mijn-eerste-script.js.map
