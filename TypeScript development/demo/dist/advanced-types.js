@@ -15,11 +15,11 @@ class Mouse extends Animal {
 let animals = [new Cat(), null, new Cow()];
 animals.push(new Mouse());
 let ietsjes = 42;
-function bla(x) {
+function numberGuard(x) {
     return typeof x === 'number';
 }
 function doeIetsMetType(q) {
-    if (bla(q)) { // custom type guard
+    if (numberGuard(q)) { // custom type guard
         q.toFixed(4);
     }
     // if (typeof q === "number") { // type guard

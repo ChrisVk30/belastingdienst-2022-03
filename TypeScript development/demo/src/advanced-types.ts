@@ -15,12 +15,12 @@ animals.push(new Mouse());
 let ietsjes: number | string = 42;
 
 
-function bla(x: number | string): x is number { // custom type guard
+function numberGuard(x: number | string): x is number { // custom type guard
 	return typeof x === 'number';
 }
 
 function doeIetsMetType(q: number | string) {
-	if (bla(q)) { // custom type guard
+	if (numberGuard(q)) { // custom type guard
 		q.toFixed(4);
 	}
 	// if (typeof q === "number") { // type guard
