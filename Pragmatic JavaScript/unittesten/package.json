@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ts-mocha --paths test/**/*.spec.ts --reporter nyan"
+    "test": "ts-mocha --paths test/**/*.spec.ts --reporter nyan",
+    "test-with-coverage": "nyc --reporter=lcov ts-mocha --paths test/**/*.spec.ts --reporter nyan"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@stryker-mutator/core": "^6.1.2",
     "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.1",
     "@types/sinon": "^10.0.12",
     "chai": "^4.3.6",
     "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
     "sinon": "^14.0.0",
     "ts-mocha": "^10.0.0",
     "ts-sinon": "^2.0.2",
