@@ -1,16 +1,15 @@
 {
-  "name": "demo",
+  "name": "servertje",
   "version": "1.0.0",
   "description": "",
-  "main": "javascript-zuigt.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@types/mocha": "^9.1.1",
-    "typescript": "^4.7.4"
+  "dependencies": {
+    "express": "^4.18.1"
   }
 }
