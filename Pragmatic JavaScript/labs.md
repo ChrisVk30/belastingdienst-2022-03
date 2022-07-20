@@ -92,7 +92,7 @@ Maak een kleine webapplicatie met een tabelletje met data en een formulier om ni
 ## Oefening 4: een backend
 
 * Serveer de pagina met de tabel inclusief CSS en JavaScript als static files.
-* Creëer een REST API om data (thee):
+* Creëer een REST API om data:
   - van op te halen (GET)
   - toe te voegen (POST)
 
