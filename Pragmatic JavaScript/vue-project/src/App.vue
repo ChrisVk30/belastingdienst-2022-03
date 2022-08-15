@@ -13,7 +13,7 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
-    <TheWelcome />
+    <TheWelcome :stage="8" />
   </main>
 </template>
 
