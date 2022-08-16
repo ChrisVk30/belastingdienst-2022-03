@@ -4,8 +4,8 @@ namespace Hangman.Backend.Repositories
 {
     public interface IGameRepository
     {
-        Task<GameEntity> Create();
-        Task<GameEntity> Get(int id);
         Task<IEnumerable<GameEntity>> GetAll();
+        Task<GameEntity> Get(int id);
+        Task<GameEntity> Create(PlayerEntity player);
     }
 }
