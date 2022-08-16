@@ -1,13 +1,22 @@
 <script lang="ts">
-	import { navigateTo } from "svelte-router-spa";
+	import { navigateTo } from 'svelte-router-spa';
 
-
-	let name: string;
+	let playerName: string;
 
 	const start = () => {
-		console.log('name:', name);
+		console.log('playerName:', playerName);
 
-		navigateTo('/game/45');
+		fetch('https://localhost:7223/api/game', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ playerName })
+		})
+			.then((x) => x.json())
+			.then((game) => {
+				navigateTo(`/game/${game.id}`);
+			});
 	};
 </script>
 
@@ -16,7 +25,7 @@
 
 	<form on:submit|preventDefault={start}>
 		<label for="input-name">Je naam?</label>
-		<input id="input-name" bind:value={name} />
+		<input id="input-name" bind:value={playerName} />
 		<button>Start!</button>
 	</form>
 	{name}
