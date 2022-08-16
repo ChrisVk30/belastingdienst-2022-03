@@ -30,7 +30,10 @@ namespace Hangman.Backend.Tests
         [Fact]
         public async Task GetWithNotExistingIdShouldReturnNotFound()
         {
-
+            _mockGameRepo.Setup(x => x.Get(It.IsAny<int>())).ReturnsAsync(() => null);
+            var result = await _sut.Get(14);
+            Assert.IsType<NotFoundResult>(result.Result);
+            Assert.Null(result?.Value);
         }
     }
 }

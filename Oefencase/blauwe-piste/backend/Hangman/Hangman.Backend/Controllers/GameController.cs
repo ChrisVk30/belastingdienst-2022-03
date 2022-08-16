@@ -23,8 +23,8 @@ namespace Hangman.Backend.Controllers
         [HttpGet]
         public async Task<ActionResult<GameEntity>> Get(int id)
         {
-            return await _gameRepository.Get(id);
-
+            var game = await _gameRepository.Get(id);
+            return game == null ? NotFound() : game;
         }
 
         [HttpPost]
