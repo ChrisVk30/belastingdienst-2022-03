@@ -1,0 +1,4 @@
+[*.{ts,js,svelte}]
+quote_type = single
+indent_style = tab
+indent_size = 4

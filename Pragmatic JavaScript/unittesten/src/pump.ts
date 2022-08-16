@@ -1,4 +1,4 @@
-import { Reactor } from "./reactor";
+import {Reactor} from './reactor';
 
 export interface Pump {
     cool(reactor: Reactor): void;

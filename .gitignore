@@ -396,3 +396,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+Pragmatic JavaScript/unittesten/.nyc_output
+Pragmatic JavaScript/unittesten/coverage
+Pragmatic JavaScript/unittesten/reports
+Pragmatic JavaScript/webapp/dist
