@@ -6,6 +6,13 @@
 	const start = () => {
 		console.log('playerName:', playerName);
 
+		// nadelen van fetch() zo gebruiken:
+		// - veel handmatig werk met content-types, stringify/parse (.json())
+		// - niet getyped
+		// - geen globale errorhandler
+		// - geen intercepties
+
+		// library? svelte-query? axios?
 		fetch('https://localhost:7223/api/game', {
 			method: 'POST',
 			headers: {
@@ -28,5 +35,4 @@
 		<input id="input-name" bind:value={playerName} />
 		<button>Start!</button>
 	</form>
-	{name}
 </main>
