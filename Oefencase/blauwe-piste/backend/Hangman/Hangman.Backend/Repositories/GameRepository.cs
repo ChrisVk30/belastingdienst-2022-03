@@ -9,24 +9,28 @@ namespace Hangman.Backend.Repositories
 {
     public class GameRepository : IGameRepository
     {
-        private static List<GameEntity> s_games = new List<GameEntity>();
+        private static List<GameEntity> s_games = new();
 
-        public async Task<IEnumerable<GameEntity>> GetAll()
+        public Task<IEnumerable<GameEntity>> GetAll()
         {
-            return null;
-
+            return Task.FromResult(s_games.AsEnumerable());
         }
 
-        public async Task<GameEntity> Get(int id)
+        public Task<GameEntity?> Get(int id)
         {
-            return null;
-
+            return Task.FromResult(s_games.SingleOrDefault(x => x.Id == id));
         }
 
-        public async Task<GameEntity> Create(PlayerEntity player)
+        public Task<GameEntity> Create(PlayerEntity player)
         {
-            return null;
-
+            var game = new GameEntity
+            {
+                Id = s_games.Any() ? s_games.Max(x => x.Id) + 1 : 1,
+                Player = player,
+                PlayerId = player.Id
+            };
+            s_games.Add(game);
+            return Task.FromResult(game);
         }
     }
 }

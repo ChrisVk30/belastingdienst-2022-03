@@ -9,14 +9,22 @@ namespace Hangman.Backend.Repositories
 {
     public class PlayerRepository : IPlayerRepository
     {
-        public async Task<PlayerEntity> Get(string name)
+        private static List<PlayerEntity> s_players = new();
+
+        public Task<PlayerEntity?> Get(string name)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(s_players.SingleOrDefault(x => x.Name == name));
         }
 
-        public async Task<PlayerEntity> Create(string name)
+        public Task<PlayerEntity> Create(string name)
         {
-            throw new NotImplementedException();
+            var player = new PlayerEntity
+            {
+                Id = s_players.Any() ? s_players.Max(x => x.Id) + 1 : 1,
+                Name = name
+            };
+            s_players.Add(player);
+            return Task.FromResult(player);
         }
     }
 }

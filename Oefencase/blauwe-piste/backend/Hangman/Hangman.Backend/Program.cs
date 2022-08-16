@@ -4,7 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddTransient<GameRepository>();
+builder.Services.AddTransient<IGameRepository, GameRepository>();
+builder.Services.AddTransient<IPlayerRepository, PlayerRepository>();
 
 builder.Services.AddControllers();
 

@@ -37,10 +37,5 @@ namespace Hangman.Backend.Controllers
             player ??= await _playerRepository.Create(newGameDto.PlayerName);
             return await _gameRepository.Create(player);
         }
-
-        //public async Task<IActionResult> Guess()
-        //{
-
-        //}
     }
 }
