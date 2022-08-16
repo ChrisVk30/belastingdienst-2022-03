@@ -34,6 +34,7 @@ namespace Hangman.Backend.Controllers
         public async Task<ActionResult<GameEntity>> Post(NewGameDto newGameDto)
         {
             var player = await _playerRepository.Get(newGameDto.PlayerName);
+            player ??= await _playerRepository.Create(newGameDto.PlayerName);
             return await _gameRepository.Create(player);
         }
 

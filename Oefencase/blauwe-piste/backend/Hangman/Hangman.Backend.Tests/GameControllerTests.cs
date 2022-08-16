@@ -17,14 +17,19 @@ namespace Hangman.Backend.Tests
         public GameControllerTests()
         {
             _mockGameRepo = new Mock<IGameRepository>();
+            _mockGameRepo.Setup(x => x.Get(It.IsAny<int>())).ReturnsAsync(new GameEntity());
+            _mockGameRepo.Setup(x => x.Create(It.IsAny<PlayerEntity>())).ReturnsAsync(new GameEntity());
+
             _mockPlayerRepo = new Mock<IPlayerRepository>();
+            _mockPlayerRepo.Setup(x => x.Get(It.IsAny<string>())).ReturnsAsync(new PlayerEntity { Id = 4 });
+            _mockPlayerRepo.Setup(x => x.Create(It.IsAny<string>())).ReturnsAsync(new PlayerEntity { Id = 8, Name = "Frank" });
+
             _sut = new GameController(_mockGameRepo.Object, _mockPlayerRepo.Object);
         }
 
         [Fact]
         public async Task Get_ValidId_ReturnGameIfFoundByRepo()
         {
-            _mockGameRepo.Setup(x => x.Get(It.IsAny<int>())).ReturnsAsync(new GameEntity());
             var result = await _sut.Get(14);
             Assert.NotNull(result?.Value);
         }
@@ -39,14 +44,23 @@ namespace Hangman.Backend.Tests
         }
 
         [Fact]
-        public async Task Post_ExistingPlayerName_AddGameToPlayerUsingMultipleRepos()
+        public async Task Post_ExistingPlayer_AddGameToPlayer()
         {
-            _mockPlayerRepo.Setup(x => x.Get(It.IsAny<string>())).ReturnsAsync(new PlayerEntity { Id = 4 });
-            _mockGameRepo.Setup(x => x.Create(It.IsAny<PlayerEntity>())).ReturnsAsync(new GameEntity());
-
             var result = await _sut.Post(new() { PlayerName = "Frank" });
 
             _mockPlayerRepo.Verify(x => x.Create(It.IsAny<string>()), Times.Never());
+            _mockGameRepo.Verify(x => x.Create(It.IsAny<PlayerEntity>()));
+            Assert.NotNull(result?.Value);
+        }
+
+        [Fact]
+        public async Task Post_NonExistentPlayer_CreatePlayerAndAddGameToNewlyCreatedPlayer()
+        {
+            _mockPlayerRepo.Setup(x => x.Get(It.IsAny<string>())).ReturnsAsync(() => null);
+
+            var result = await _sut.Post(new() { PlayerName = "Frank" });
+
+            _mockPlayerRepo.Verify(x => x.Create(It.IsAny<string>()));
             _mockGameRepo.Verify(x => x.Create(It.IsAny<PlayerEntity>()));
             Assert.NotNull(result?.Value);
         }
