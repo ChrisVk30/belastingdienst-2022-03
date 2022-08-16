@@ -9,6 +9,8 @@
 		// nadelen van fetch() zo gebruiken:
 		// - veel handmatig werk met content-types, stringify/parse (.json())
 		// - niet getyped
+		// - zelf isLoading-variabelen bijhouden (en testen!)
+		// - niks geregeld voor herbruiken van requests
 		// - geen globale errorhandler
 		// - geen intercepties
 
