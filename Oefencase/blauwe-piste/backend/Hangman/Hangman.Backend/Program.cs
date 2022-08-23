@@ -1,13 +1,30 @@
+using Hangman.Backend.DataAccess;
 using Hangman.Backend.Repositories;
+using Hangman.Backend.Services;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<HangmanDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("HangmanDbContext"));
+}, ServiceLifetime.Transient);
 
-builder.Services.AddTransient<IGameRepository, GameRepository>();
-builder.Services.AddTransient<IPlayerRepository, PlayerRepository>();
+builder.Services.AddTransient<IGameService, GameService>();
 
-builder.Services.AddControllers();
+builder.Services.AddTransient<IGameRepository, GameDbRepository>();
+builder.Services.AddTransient<IPlayerRepository, PlayerDbRepository>();
+builder.Services.AddTransient<IWordRepository, WordDbRepository>();
+
+//builder.Services.AddTransient<IGameRepository, GameInMemoryRepository>();
+//builder.Services.AddTransient<IPlayerRepository, PlayerInMemoryRepository>();
+//builder.Services.AddTransient<IWordRepository, WordInMemoryRepository>();
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 
 builder.Services.AddCors(options =>
 {
